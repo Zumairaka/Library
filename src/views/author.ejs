@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Library Management</title>
+    <link rel = "stylesheet " href = "/css/style.css">
+    <link rel = "stylesheet" href = "/css/bootstrap.min.css">    
+</head>
+<body>
+
+    <!-- Navigation Bar-->
+    <nav class = "navbar navbar-custom col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        </div class = "container-fluid">
+            <ul class = "nav">
+                <%for(var i=0;i<nav.length;i++){%>
+                    <li class = "navbar-item ">
+                        <a href = "<%=nav[i].link%>" class = "item"><%=nav[i].title%></a> 
+                    </li>
+                <%}%>
+            </ul>
+        </div>
+    </nav>
+   
+     
+    <!--Top Part-->
+
+    <div class = "col-sm-12 col-md-12 col-lg-12 col-xl-12" id = "top">
+        <div class = "col-sm-2 col-md-2 col-lg-6 col-xl-6 float-left" id = "top-heading">
+            <h1 class = "display-3 font-weight-bold"><%=title%></h1>
+        </div>
+        
+        <!--Top Right Box-->
+
+        <div class = "col-sm-2 col-md-4 col-lg-4 col-xl-4 float-right" id = "top-right-box"> 
+        </div>
+    </div>
+
+    <!--Main Content-->
+    
+
+    <div class = "jumbotron col-sm-12 col-md-12 col-lg-12 col-xl-12" id = "main">
+        <div class = "container-fluid col-sm-10 col-md-10 col-lg-12 colg-xl-12" id = "bookcontent">
+            <!--Left Side-->
+            <!--First image-->
+            <div class="row">
+                <div class = "float-left col-sm-2 col-md-2 col-lg-2 col-xl-2" id = "bookleft">
+                        <img src = "/Images/<%=author.image%>" id = "image2" class = "rounded-circle image-fluid" alt = "image one" >
+                </div>
+            
+                <!--Right Side-->
+                <div class = "float-right col-sm-8 col-md-8 col-lg-8 col-xl-8" id = "bookright">
+                    <h4 class = "text-left text-secondary"><%=author.name%></h4>
+                    <p class="text-bold text-secondary">Country : <%=author.country%></p>
+                    <p class="text-bold text-secondary">Age : <%=author.age%></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       
+    <script src = "/js/form.js"></script>
+</body>
+</html>

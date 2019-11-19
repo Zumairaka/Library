@@ -1,0 +1,144 @@
+.navbar-custom{
+    background-color : rgba(17, 17, 109, 0.925);
+}
+.item{
+    padding-left : 60px;
+    color : white;
+    font-family : 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight : bold;
+    padding-right : 10px;
+}
+#top{
+    background-color : rgb(3, 3, 70);
+    background-size : cover;
+    margin-right : 0px;
+    border : 0px;
+    padding-right : 0px;
+    width : 100%;
+    display : inline-block;
+}
+#top-heading{
+    color : white;
+    padding-left : 5%;
+    padding-bottom : 5%;
+    padding-top : 2%;
+    padding-right : 0px;
+    border : 0px;
+    font-family : 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#top-right-box{
+    background-color :  rgba(17, 17, 109, 0.925);
+    margin-top : 2%;
+    margin-left : 6%;
+    margin-right : 6.5%;
+    padding-bottom : 7%;
+    border : 0%;
+}
+#main{
+    margin-top : -0.5%;
+    padding-right : 11%;
+    display : flex;
+    flex-direction : column;
+    
+}
+#image{
+    height : 100px;
+    width : 100px;
+}
+#image2{
+    height : 110px;
+    width : 140px;
+    
+}
+#content{
+    margin-left : 5%;
+    background : white;
+    margin-top : -8%;
+    padding-top : 5%;
+    padding-right : 0px;
+    display : flex;
+    flex-direction : row;
+
+}
+#bookcontent{
+    display : flex;
+    flex-direction : column;
+    margin-left : 5%;
+    background : white;
+    margin-top : -8%;
+    padding-top : 5%;
+    padding-right : 10%;
+    padding-left : 8%;
+}
+#left{
+    margin-left : 5%;
+    padding-bottom : 5%;
+    padding-left : 6%;
+    margin-bottom : 5%;
+}
+#bookleft{
+    padding-bottom : 5%;
+    padding-left : 4%;
+    margin-bottom : 5%;
+    margin-right : 10%
+}
+#right{
+    font-family : Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+#bookright{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+#logindiv{
+    background-color :  rgba(17, 17, 109, 0.925);
+    padding-left : 5%;
+    padding-right : 5%;
+    padding-top : 5%;
+    margin-left : 30%;
+    margin-right: 30%;
+}
+#link{
+    font-size : small;
+    display : inline-block;
+    padding : 2px 5px 2px 5px;
+}
+.para{
+    font-family : monospace;
+}
+#addBooks{
+    background-color :  rgba(17, 17, 109, 0.925);
+    margin-left : 23%;
+    margin-right : 18%;
+    padding-top : 5%;
+    padding-bottom : 2%;
+    padding-left : 5%;
+    padding-right : 5%;;
+}
+.heading-signup{
+    font-weight : bold;
+    margin-bottom : 5%;
+}
+#content-signup{
+    margin-left : 5%;
+    background : white;
+    margin-top : -8%;
+    padding-top : 5%;
+    padding-right : 15%;
+    padding-left : 15%;
+    display : flex;
+    flex-direction : column;
+}
+
+#submitbuttons{
+    margin-left : 28%;
+}
+label{
+    font-weight : bold;
+}
+.cancel{
+    margin-left : 37%;
+}
+
+
+

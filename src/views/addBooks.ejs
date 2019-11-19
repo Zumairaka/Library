@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Library Management</title>
+    <link rel="stylesheet " href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar-->
+    <nav class="navbar navbar-custom col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        </div class="container-fluid">
+            <ul class="nav">
+                <%for(var i=0;i<nav.length;i++){%>
+                    <li class="navbar-item ">
+                        <a href="<%=nav[i].link%>" class="item"><%=nav[i].title%></a>
+                    </li>
+                <%}%>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!--Top Part-->
+
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" id="top">
+        <div class="col-sm-2 col-md-2 col-lg-6 col-xl-6 float-left" id="top-heading">
+            <h1 class="display-3 font-weight-bold">
+                <%=title%>
+            </h1>
+        </div>
+        
+        <!--Top Right Box-->
+     
+        <div class="col-sm-2 col-md-4 col-lg-4 col-xl-4 float-right" id="top-right-box">
+        </div>
+    </div>
+
+    <!--Main Content-->
+
+
+    <div class="jumbotron col-sm-12 col-md-12 col-lg-12 col-xl-12" id="main">
+        <div class="container-fluid col-sm-10 col-md-10 col-lg-12 colg-xl-12" id="bookcontent">
+            <div id="addBooks">
+            <form action='/books/save' method="POST" name="addBooks" class="form-group text-secondary">
+                <div class="form-group">
+                    <label>Title*</label>
+                    <input type="text" class="form-control" name="booktitle" placeholder="Enter Book Title" >
+                </div>
+                <div class="form-group">
+                    <label>Author*</label>
+                    <input type="text" class="form-control" name="author" placeholder="Enter Author Name" required>
+                </div>
+                <div class="form-group">
+                    <label>Genre*</label>
+                    <input type="text" class="form-control" name="genre" placeholder="Enter Genre" required>
+                </div>
+                <div class="form-group">
+                    <label>Image Name*</label>
+                    <input type="text" class="form-control" name="authorimage" required>
+                </div>
+                <div class="form-group" id="submitbuttons">
+                    <input type="submit" class="btn btn-success" value="Add Book" name="submit" id="submit">
+                    <button type="reset" class="btn btn-secondary" value="reset">Reset</button>
+                </div>
+                <div class = "cancel">
+                    <button type = "cancel" class = "btn btn-danger" value = "cancel" onclick = "javascript:window.location = 'index.html'">Cancel</button>                
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/form.js"></script>
+</body>
+
+</html>
