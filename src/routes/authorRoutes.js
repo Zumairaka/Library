@@ -1,47 +1,63 @@
 const express = require('express');
 const authorRouter = express.Router();
+const {addAuthorModel} = require('../models/addAuthorModel');
+var test = 0;
 
 function router(nav){
-    var authors = [
-        {
-            name: "Liv Nicolayevich",
-            age: "60",
-            country: "German",
-            image: "image0.jpg"
-        },
-        {
-            name: "Victor Hugo",
-            age: "50",
-            country: "USA",
-            image: "image1.jpg"
-        },
-        {
-            name: "Chetan Bhagath",
-            age: "45",
-            country: "India",
-            image: "image2.jpg"
-
-        },
-        {
-            name: "Vilasini",
-            age: "52",
-            country: "India",
-            image: "image3.jpg"
-        }
-    ];
 
     authorRouter.route('/')
         .get((req, res) => {
-            res.render(
-                'authors',
-                {
-                    nav,
-                    title: "Authors",
-                    authors
+            addAuthorModel.find((error,data)=>{
+                if(error){
+                    throw error;
                 }
-            );
-        }
-    );
+                else{
+                    test = data;
+                    res.render(
+                        'authors',
+                        {
+                            nav,
+                            title: "Authors",
+                            authors:data
+                        }
+                    );
+                }
+            });
+        });
+
+    authorRouter.route('/addAuthor')
+        .get((req,res)=>{
+            res.render('addAuthor',
+            {
+                nav,
+                title:"Add Authors"
+            });
+        });
+
+    authorRouter.route('/save')
+        .post((req,res)=>{
+            var author = new addAuthorModel(req.body);
+            author.save((error,data)=>{
+                if(error){
+                    res.json({"Status":"Error"});
+                    throw error;
+                }
+                else{
+                    res.json({"Status":"Success"});
+                }
+            });
+        });
+
+    authorRouter.get('/viewAllapi',(req,res)=>{
+            addAuthorModel.find((error,data)=>{
+                if(error){
+                    throw error;
+                }
+                else{
+                    res.send(data);
+                }
+            });
+        });
 
     authorRouter.route('/:id')
         .get((req, res) => {
@@ -51,7 +67,7 @@ function router(nav){
                 {
                     nav,
                     title: "Authors",
-                    author: authors[id]
+                    author: test[id]
                 }
             );
         }

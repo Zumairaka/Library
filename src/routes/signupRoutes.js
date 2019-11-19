@@ -1,5 +1,6 @@
 const express = require('express');
 const signupRouter = express.Router();
+const {signUpModel} = require('../models/signUpModel');
 
 function router(nav){
     signupRouter.route('/')
@@ -16,9 +17,28 @@ function router(nav){
 
     signupRouter.route('/save')
         .post((req,res) =>{
-            console.log(req.body);
-        }
-    );
+            var signUp = new signUpModel(req.body) ;
+            signUp.save((error,data)=>{
+                if(error){
+                    res.json({"Status":"Error"});
+                    throw error
+                }
+                else{
+                    res.json({"Status":"Success"});
+                }
+            });
+        });
+
+    signupRouter.get('/viewAllapi',(req,res)=>{
+            signUpModel.find((error,data)=>{
+                if(error){
+                    throw error;
+                }
+                else{
+                    res.send(data);
+                }
+            });
+        });
 
     return signupRouter;
 }

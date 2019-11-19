@@ -26,7 +26,8 @@ var nav=[
             {link:'/login',title:'Login'},
             {link:'/books',title:'Books'},
             {link:'/authors',title:'Authors'},
-            {link:'/books/addBooks',title:'Add Books'}
+            {link:'/books/addBooks',title:'Add Books'},
+            {link:'/authors/addAuthor',title:'Add Authors'}
         ];
 
 

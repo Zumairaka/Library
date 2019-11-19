@@ -40,10 +40,8 @@ function router(nav){
                 {
                     nav,
                     title: "Add Books"
-                }
-            );
-        }
-    );
+                });
+            });
 
     booksRouter.route('/save')
         .post((req,res) =>{
