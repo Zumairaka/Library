@@ -42,7 +42,8 @@ app.use('/authors',authorRouter);
 app.use('/signUp',signupRouter);
 app.use('/login',loginRouter);
 
-mongoose.connect("mongodb://localhost:27017/Library");
+//mongoose.connect("mongodb://localhost:27017/Library");
+mongoose.connect("mongodb+srv://Zumairaka:parveen00@cluster0-rops0.mongodb.net/test?retryWrites=true&w=majority");
 
 
 app.get('/',function(req,res){
@@ -55,6 +56,6 @@ app.get('/',function(req,res){
 
 
 
-app.listen(3061,function(){
+app.listen(process.env.PORT || 3061,function(){
     console.log("Listeing to Port"+chalk.blue(" 3061"));
 });
