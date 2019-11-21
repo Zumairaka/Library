@@ -9,7 +9,8 @@ signUpSchema = new mongoose.Schema(
         lname:String,
         uname:{
             type:String,
-            required:true
+            required:true,
+            unique:true
         },
         password:{
             type:String,
@@ -36,7 +37,7 @@ signUpSchema = new mongoose.Schema(
             required:true
         },
         lngg:{
-            type:String,
+            type:[String],
             required:true
         },
         country:{

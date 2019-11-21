@@ -27,7 +27,9 @@ var nav=[
             {link:'/books',title:'Books'},
             {link:'/authors',title:'Authors'},
             {link:'/books/addBooks',title:'Add Books'},
-            {link:'/authors/addAuthor',title:'Add Authors'}
+            {link:'/authors/addAuthor',title:'Add Authors'},
+            {link:'/books/update',title:'Update Book'}
+
         ];
 
 
@@ -42,8 +44,8 @@ app.use('/authors',authorRouter);
 app.use('/signUp',signupRouter);
 app.use('/login',loginRouter);
 
-//mongoose.connect("mongodb://localhost:27017/Library");
-mongoose.connect("mongodb+srv://Zumairaka:parveen00@cluster0-rops0.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect("mongodb://localhost:27017/Library");
+//mongoose.connect("mongodb+srv://Zumairaka:parveen00@cluster0-rops0.mongodb.net/test?retryWrites=true&w=majority");
 
 
 app.get('/',function(req,res){

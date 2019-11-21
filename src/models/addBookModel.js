@@ -12,6 +12,10 @@ const addBookSchema = new mongoose.Schema(
         genre:{
             type:String,
             required:true},
+        bookid:{
+            type:String,
+            required:true,
+            unique:true},
         authorimage:String
     }
 );

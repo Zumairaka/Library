@@ -60,6 +60,43 @@ function router(nav){
         }
     );
 
+    booksRouter.get('/update',(req,res)=>{
+        res.render('update',{
+            nav,
+            title:'Update Book'
+        });
+    });
+    
+    booksRouter.post('/delete',(req,res)=>{
+        addBookModel.findOneAndDelete({'bookid':req.body.bookid},(error,data)=>{
+            if(error){
+                res.json({"Status":"Error"});
+                throw error;
+            }
+            else if(!data){
+                res.json({"Status":"The Book Is Not Available"});
+            }
+            else{
+                res.json({"Status":"Successfully Deleted The Book"});
+            }
+        });
+    });
+
+    booksRouter.post('/modify',(req,res)=>{
+        addBookModel.findOneAndUpdate({'bookid':req.body.bookid},req.body,(error,data)=>{
+            if(error){
+                res.json({"Status":"Error"});
+                throw error;
+            }
+            else if(!data){
+                res.json({"State":"The Book Is Not Available"});
+            }
+            else{
+                res.json({"State":"Successfully Updated The Details"});
+            }
+        });
+    });
+
     booksRouter.get('/viewAllapi',(req,res)=>{
         addBookModel.find((error,data)=>{
             if(error)

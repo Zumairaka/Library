@@ -1,6 +1,6 @@
 const express = require('express');
 const loginRouter = express.Router();
-const {loginModel} = require('../models/loginModel');
+const {signUpModel} = require('../models/signUpModel');
 
 function router(nav){
     loginRouter.route('/')
@@ -15,16 +15,19 @@ function router(nav){
         }
     );
 
-    loginRouter.route('/save')
-        .post((req,res) =>{
-            var login = new loginModel(req.body);
-            login.save((error,data)=>{
+    loginRouter.post('/validate',async (req,res) =>{
+            var username = req.body.uname;
+            var password = req.body.password;
+            await signUpModel.findOne({$and:[{'uname':username},{'password':password}]},(error,data)=>{
                 if(error){
                     res.json({"Status":"Error"});
                     throw error;
                 }
+                else if(!data){
+                    res.json({"Status":"Invalid Username or Password"});
+                    }
                 else{
-                    res.json({"Status":"Success"});
+                    res.json({"Status":"Successfully Logged In"});
                 }
             });
         }
