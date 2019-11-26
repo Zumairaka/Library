@@ -27,7 +27,12 @@ function router(nav){
                     res.json({"Status":"Invalid Username or Password"});
                     }
                 else{
-                    res.json({"Status":"Successfully Logged In"});
+                    res.render('loginindex',
+                    {
+                        nav,
+                        title:'Library',
+                        data
+                    });
                 }
             });
         }

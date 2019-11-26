@@ -15,7 +15,7 @@ function validateForm(form)
     var dob = form.dob.value;
     var gender = form.gender.value;
 
-    if(uname.length < 9)
+    if(uname.length < 8)
     {
         alert("Username Should Have Atleast 8 Characters!");
         return false;
@@ -49,7 +49,7 @@ function validateLogin(loginform)
     var uname = loginform.uname.value;
     var password = loginform.password.value;
     var password_reg = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
-    if(uname.length < 9)
+    if(uname.length < 8)
     {
         alert("Username Should Have Atleast 8 Characters!");
         return false;

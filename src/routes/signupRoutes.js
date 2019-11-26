@@ -24,7 +24,12 @@ function router(nav){
                     throw error
                 }
                 else{
-                    res.json({"Status":"Success"});
+                    res.render('login',
+                    {
+                        nav,
+                        title:'Login',
+                        data
+                    });
                 }
             });
         });

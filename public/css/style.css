@@ -153,6 +153,19 @@ label{
         text-decoration: underline;
         cursor: pointer;
 }
+#logoutid{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: cursive;
+    /*input has OS specific font-family*/
+    color: rgb(121, 119, 117);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bolder;
+    margin-left: 15%;
+}
 #delete{
     padding-left:40%;
 }
@@ -162,6 +175,12 @@ label{
 }
 #edit{
     width:80px;
+}
+.boxtext{
+    color: blanchedalmond;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top:5%;
+    margin-left:2%;
 }
 
 

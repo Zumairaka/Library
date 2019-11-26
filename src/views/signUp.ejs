@@ -44,7 +44,7 @@
                 <p>Fields With * Are Mandatory</p>
             </div>        
             <div id = "addBooks">
-            <form action = "/signUp/save" class = "form-group text-secondary" method = "POST">
+            <form action = "/signUp/save" class = "form-group text-secondary" method = "POST" onsubmit="return validateForm(this)">
                 <div class = "form-group">
                     <label>First Name*</label>
                     <input type = "text" class = "form-control" name = "fname" id = "fname" placeholder = "Enter First Name" required>
@@ -108,9 +108,6 @@
                 <div class = "form-group" id = "submitbuttons">
                     <input type = "submit" class = "btn btn-success" value = "Sign Up" name = "submit" id = "submit">
                     <button type = "reset" class = "btn btn-secondary" value = "reset">Reset</button>
-                </div>
-                <div class = "cancel">
-                    <button type = "cancel" class = "btn btn-danger" value = "cancel" onclick = "javascript:window.location = 'index.html'">Cancel</button>                
                 </div>
             </form>
             </div>
