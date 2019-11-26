@@ -142,6 +142,27 @@ label{
 .cancel{
     margin-left : 37%;
 }
+#buttonid{
+        background: none!important;
+        border: none;
+        padding: 0!important;
+        /*optional*/
+        font-family: monospace;
+        /*input has OS specific font-family*/
+        color: rgb(121, 119, 117);
+        text-decoration: underline;
+        cursor: pointer;
+}
+#delete{
+    padding-left:40%;
+}
+#update{
+    padding-left: 5%;
+    color: blanchedalmond;
+}
+#edit{
+    width:80px;
+}
 
 
 

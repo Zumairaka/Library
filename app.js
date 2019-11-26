@@ -27,9 +27,7 @@ var nav=[
             {link:'/books',title:'Books'},
             {link:'/authors',title:'Authors'},
             {link:'/books/addBooks',title:'Add Books'},
-            {link:'/authors/addAuthor',title:'Add Authors'},
-            {link:'/books/update',title:'Update Book'}
-
+            {link:'/authors/addAuthor',title:'Add Authors'}
         ];
 
 
@@ -58,6 +56,6 @@ app.get('/',function(req,res){
 
 
 
-app.listen(process.env.PORT || 3061,function(){
-    console.log("Listeing to Port"+chalk.blue(" 3061"));
+app.listen(process.env.PORT || 3561,function(){
+    console.log("Listeing to Port"+chalk.blue(" 3561"));
 });

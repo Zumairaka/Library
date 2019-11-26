@@ -56,11 +56,9 @@
                         <p class="text-bold text-secondary"><%=books[i].genre%></p>
                         <p class="text-bold text-secondary"><%=books[i].author%></p>
                         <!--Right para-->
-                        <ul class = "nav">
-                            <li>
-                                <a href = "/books/<%=i%>" class = "text-muted para">Read More</a></small>
-                            </li>
-                        </ul>
+                        <form action="books/<%=books[i]._id%>" method="POST" class="form-group" name="readmore">
+                            <button name="readmorebutton" id="buttonid">Read More</button>
+                        </form>
                         <hr>
                     </div>
                 <%}%>

@@ -54,45 +54,49 @@ function router(nav){
                 }
                 else
                 {
-                    res.json({"Status":"Success"});
+                    res.redirect("/books");
                 }
             });
         }
     );
-
-    booksRouter.get('/update',(req,res)=>{
-        res.render('update',{
-            nav,
-            title:'Update Book'
-        });
-    });
     
     booksRouter.post('/delete',(req,res)=>{
-        addBookModel.findOneAndDelete({'bookid':req.body.bookid},(error,data)=>{
+        addBookModel.findByIdAndDelete(req.body.hidden,(error,data)=>{
             if(error){
                 res.json({"Status":"Error"});
                 throw error;
             }
-            else if(!data){
-                res.json({"Status":"The Book Is Not Available"});
+            else{
+                res.redirect("/books");
+            }
+        });
+    });
+
+    booksRouter.post('/update',(req,res)=>{
+        addBookModel.findById(req.body.hidden,(error,data)=>{
+            if(error){
+                res.json({"Status":"Error"});
+                throw error;
             }
             else{
-                res.json({"Status":"Successfully Deleted The Book"});
+                res.render('update',
+                {
+                    nav,
+                    title:'Update Book',
+                    data
+                });
             }
         });
     });
 
     booksRouter.post('/modify',(req,res)=>{
-        addBookModel.findOneAndUpdate({'bookid':req.body.bookid},req.body,(error,data)=>{
+        addBookModel.findByIdAndUpdate(req.body.hidden,req.body,(error,data)=>{
             if(error){
                 res.json({"Status":"Error"});
                 throw error;
             }
-            else if(!data){
-                res.json({"State":"The Book Is Not Available"});
-            }
             else{
-                res.json({"State":"Successfully Updated The Details"});
+                res.redirect("/books");
             }
         });
     });
@@ -110,20 +114,24 @@ function router(nav){
         });
     })
 
-    booksRouter.route('/:id')
-        .get((req, res) =>{
-            const id = req.params.id;
-
-            res.render(
-                'book',
-                {
-                    nav,
-                    title: "Books",
-                    book:test[id]
+    booksRouter.route('/:_id')
+        .post((req, res) =>{
+            addBookModel.findById(req.params._id,(error,data)=>{
+                if(error){
+                    res.json({'Status':"Error"});
+                    throw error;
                 }
-            );
-        }
-    );
+                else if(data){
+                    res.render(
+                    'book',
+                    {
+                        nav,
+                        title: "Books",
+                        book:data
+                    });
+                }
+            });
+        });
 
     return booksRouter;
 }

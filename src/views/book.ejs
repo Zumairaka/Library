@@ -58,6 +58,24 @@
                     <p class="text-bold text-secondary">Author : <%=book.author%></p>
                 </div>
             </div>
+            <div class="row">
+                <div class="float-left" id="delete">
+                    <form action = "/books/delete" class = "form-group text-secondary" name="login" method = "POST">
+                        <input type = "hidden" name = "hidden" value="<%=book._id%>">
+                        <div class = "form-group" id = "submitbuttons">
+                            <input type = "submit" class = "btn btn-danger" value = "Delete" name="delete" id="submit">
+                        </div>
+                    </form>
+                </div>
+                <div class="float-right" id="update">
+                    <form action = "/books/update" class = "form-group text-secondary" name="login" method = "POST">
+                        <input type = "hidden" name = "hidden" value="<%=book._id%>">
+                        <div class = "form-group" id = "submitbuttons">
+                            <input type = "submit" class = "btn btn-success " value = "Edit" name="edit" id="edit">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 

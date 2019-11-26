@@ -41,24 +41,6 @@
     <div class = "jumbotron col-sm-12 col-md-12 col-lg-12 col-xl-12" id = "main">
         <div class = "container-fluid col-sm-12 col-md-12 col-lg-12 colg-xl-12" id = "bookcontent">
 
-            <!--Delete Book-->
-
-            <div class="text-secondary text-center">
-                <h5>Delete The Book</h5>
-            </div>
-            <div id="logindiv">
-            <form action = "/books/delete" class = "form-group text-secondary" name="login" method = "POST">
-                <div class = "form-group">
-                    <label>Book Id*</label>
-                    <input type = "text" class = "form-control" name = "bookid" placeholder = "Enter Book Id" required>
-                </div>
-                <div class = "form-group" id = "submitbuttons">
-                    <input type = "submit" class = "btn btn-danger" value = "Delete" name="delete" id="submit">
-                    <button type = "cancel" class = "btn btn-danger " value = "cancel" onclick = "javascript:window.location = 'index.html'">Cancel</button>
-                </div>
-            </form>
-            </div>
-
             <!--Update Book-->
 
             <div class="text-secondary text-center">
@@ -66,29 +48,26 @@
             </div>
             <div id="logindiv">
             <form action = "/books/modify" class = "form-group text-secondary" name="login" method = "POST">
-                <div class = "form-group">
-                    <label>Book Id*</label>
-                    <input type = "text" class = "form-control" name = "bookid" placeholder = "Enter Book Id" required>
-                </div>
+                    <input type = "hidden" name = "hidden" value="<%=data._id%>">
                 <div class="form-group">
                     <label>Title*</label>
-                    <input type="text" class="form-control" name="booktitle" placeholder="Enter Book Title" >
+                    <input type="text" class="form-control" name="booktitle" value="<%=data.booktitle%>">
                 </div>
                 <div class="form-group">
                     <label>Author*</label>
-                    <input type="text" class="form-control" name="author" placeholder="Enter Author Name" required>
+                    <input type="text" class="form-control" name="author" value="<%=data.author%>">
                 </div>
                 <div class="form-group">
                     <label>Genre*</label>
-                    <input type="text" class="form-control" name="genre" placeholder="Enter Genre" required>
+                    <input type="text" class="form-control" name="genre" value="<%=data.genre%>">
                 </div>
                 <div class="form-group">
                     <label>Image Name*</label>
-                    <input type="text" class="form-control" name="authorimage" required>
+                    <input type="text" class="form-control" name="authorimage" value="<%=data.authorimage%>">
                 </div>
                 <div class = "form-group" id = "submitbuttons">
                     <input type = "submit" class = "btn btn-success" value = "Update" name="update" id="submit">
-                    <button type = "cancel" class = "btn btn-danger " value = "cancel" onclick = "javascript:window.location = 'index.html'">Cancel</button>
+                    <button type = "cancel" class = "btn btn-danger " value = "cancel" onclick = "javascript:window.location = 'books.ejs'">Cancel</button>
                 <div>
             </form>
             </div>
